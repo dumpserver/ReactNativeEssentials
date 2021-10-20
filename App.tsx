@@ -5,6 +5,7 @@ import ContactSectionList from "./components/ContactSectionList";
 import FibonacciFlatList from "./components/FibonacciFlatList";
 import SimpleButton from "./components/SimpleButton"
 import SimpleScroll from "./components/SimpleScroll";
+import TeaList from "./components/TeaList";
 import TextChangeLabel from "./components/TextChangeLabel";
 
 const DumpServer = () => {
@@ -19,7 +20,7 @@ const DumpServer = () => {
   return (
     <View style={{paddingTop: 90, alignItems: "center"}}>
 
-      <ContactSectionList/>
+      <TeaList/>
 
     </View>
   )
