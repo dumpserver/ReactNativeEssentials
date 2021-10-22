@@ -3,10 +3,10 @@ import {View, Text} from "react-native"
 import ButtonReturnPlank from "./components/ButtonReturnPlank";
 import ContactSectionList from "./components/ContactSectionList";
 import FibonacciFlatList from "./components/FibonacciFlatList";
+import MyFavoriteColors from "./components/MyFavoriteColors";
 import SimpleButton from "./components/SimpleButton"
 import SimpleScroll from "./components/SimpleScroll";
 import TeaList from "./components/TeaList";
-import TextChangeLabel from "./components/TextChangeLabel";
 
 const DumpServer = () => {
 
@@ -18,9 +18,9 @@ const DumpServer = () => {
   }
 
   return (
-    <View style={{paddingTop: 90, alignItems: "center"}}>
+    <View style={{flex:1, padding: 40}}>
 
-      <TeaList/>
+      <MyFavoriteColors/>
 
     </View>
   )
