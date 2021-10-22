@@ -1,14 +1,26 @@
 import React, {useState} from 'react'
-import {FlatList, Text, TextInput} from 'react-native'
+import {Button, FlatList, Text, TextInput} from 'react-native'
 
 const TeaList = () => {
 
-  const [teas, setTeas] = useState<any>('Camomila')
+  const [teas, setTeas] = useState<String[]>(['Camomila'])
+  const [tea, setTea]   = useState<any>()
+
+  const insetTea = () => {
+    var arr = teas.concat(tea)
+    setTeas(arr)
+  }
 
   return (
     <>
       <TextInput 
-        onChangeText = {text => setTeas(text)}
+        style={{borderColor: "green", borderWidth: 2, width: 100}} 
+        onChangeText = {text => setTea(text)}
+      />
+
+      <Button 
+        title = "Insert"
+        onPress = {insetTea}
       />
 
       <FlatList 
