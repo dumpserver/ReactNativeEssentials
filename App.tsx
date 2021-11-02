@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react"
 import {View, Text} from "react-native"
 import ButtonReturnPlank from "./components/ButtonReturnPlank";
 import ContactSectionList from "./components/ContactSectionList";
+import DirectionLayout from "./components/DirectionLayout";
 import FibonacciFlatList from "./components/FibonacciFlatList";
 import MyFavoriteColors from "./components/MyFavoriteColors";
 import SimpleButton from "./components/SimpleButton"
@@ -19,9 +20,7 @@ const DumpServer = () => {
 
   return (
     <View style={{flex:1, padding: 40}}>
-
-      <MyFavoriteColors/>
-
+      <DirectionLayout></DirectionLayout>
     </View>
   )
 }
