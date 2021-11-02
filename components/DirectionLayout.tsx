@@ -7,6 +7,7 @@ type BlockInfo = {
   // flexDirection: String
   selectedValue: String
   setSelectedValue: Function
+  children: any
 }
 
 const DirectionLayout = () => {
@@ -19,7 +20,9 @@ const DirectionLayout = () => {
       selectedValue={flexDirection}
       setSelectedValue={setFlexDirection}
     >
-
+      <View style={[styles.box, {backgroundColor: "powderblue"}]}/>
+      <View style={[styles.box, {backgroundColor: "skyblue"}]}/>
+      <View style={[styles.box, {backgroundColor: "steelblue"}]}/>
     
     </PreviewLayout>
   )
@@ -27,29 +30,39 @@ const DirectionLayout = () => {
 }
 
 const PreviewLayout: React.FC<BlockInfo> = ({
-  label, values, selectedValue, setSelectedValue
+  label, values, selectedValue, setSelectedValue, children
 }) => (
   <View style={{padding: 10, flex: 1}}>
     <Text style={styles.label}>{label}</Text>
     <View style={styles.row}>
-    {values.map((value, index) => (
-      <TouchableOpacity
-        key={index}
-        style={[
-          styles.button,
-          selectedValue === value && styles.selected,
-        ]}
-        onPress={() => setSelectedValue(value)}>
+      {values.map((value, index) => (
+        <TouchableOpacity
+          key={index}
+          style={[
+            styles.button,
+            selectedValue === value && styles.selected,
+          ]}
+          onPress={() => setSelectedValue(value)}>
 
-          <Text>{value}</Text>
-        
-      </TouchableOpacity>
-    ))}
+            <Text>{value}</Text>
+          
+        </TouchableOpacity>
+      ))}
+
+      <View style={[{ [label]: selectedValue}]}>
+        {children}
+      </View>
+
     </View>
   </View>
 )
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 8,
+    backgroundColor: "aliceblue",
+  },
   label: {
     textAlign: "center",
     marginBottom: 10,
@@ -78,6 +91,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
+  
 })
 
 export default DirectionLayout
